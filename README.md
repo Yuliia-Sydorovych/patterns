@@ -1,1 +1,1 @@
-# patterns
+# game-with-mediator-command-observer-patterns
