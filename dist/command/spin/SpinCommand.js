@@ -1,8 +1,8 @@
-export class SpinCommand {
+import { BaseCommand } from "../BaseCommand.js";
+export class SpinCommand extends BaseCommand {
     constructor(betManager, slotMachineManager, uiManager) {
-        this.betManager = betManager;
+        super(betManager, uiManager);
         this.slotMachineManager = slotMachineManager;
-        this.uiManager = uiManager;
     }
     execute(betAmount) {
         if (this.betManager.placeBet(betAmount)) {

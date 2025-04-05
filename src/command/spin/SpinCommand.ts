@@ -1,19 +1,17 @@
-import { ICommand } from "../interface/ICommand";
 import { SlotMachineManager } from "../../reels/SlotMachineManager";
 import { UIManager } from "../../ui/UIManager";
 import { BetManager } from "../bet/BetManager";
+import { BaseCommand } from "../BaseCommand";
 
-export class SpinCommand implements ICommand
+export class SpinCommand extends BaseCommand
 {
-  private betManager: BetManager;
   private slotMachineManager: SlotMachineManager;
-  private uiManager: UIManager;
 
   constructor(betManager: BetManager, slotMachineManager: SlotMachineManager, uiManager: UIManager)
   {
-    this.betManager = betManager;
+    super(betManager, uiManager);
+
     this.slotMachineManager = slotMachineManager;
-    this.uiManager = uiManager;
   }
 
   public execute(betAmount: number): void
