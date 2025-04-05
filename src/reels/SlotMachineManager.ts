@@ -1,4 +1,4 @@
-import { ISlotMachine } from "./ISlotMachine";
+import { ISlotMachine } from "./interface/ISlotMachine";
 
 export class SlotMachineManager
 {

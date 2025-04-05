@@ -1,4 +1,4 @@
-import { ISlotMachine } from "./ISlotMachine";
+import { ISlotMachine } from "./interface/ISlotMachine";
 import { Reel } from "./Reel";
 
 export class SlotMachine implements ISlotMachine
