@@ -1,10 +1,10 @@
 import { IObserver } from "./interface/IObserver";
 import { IPlayer } from "./interface/IPlayer";
 
-export class Player implements IPlayer
+export class Player implements IPlayer<number>
 {
   private balance: number;
-  private observers: IObserver[] = [];
+  private observers: IObserver<number>[] = [];
 
   constructor(initialBalance: number)
   {
@@ -33,12 +33,12 @@ export class Player implements IPlayer
     return this.balance >= amount;
   }
 
-  public addObserver(observer: IObserver): void
+  public addObserver(observer: IObserver<number>): void
   {
     this.observers.push(observer);
   }
 
-  public removeObserver(observer: IObserver): void
+  public removeObserver(observer: IObserver<number>): void
   {
     this.observers = this.observers.filter(o => o !== observer);
   }

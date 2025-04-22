@@ -1,3 +1,5 @@
+import { PlayerBalanceEvent } from "../observer/event/PlayerBalanceEvent";
+import { EventDispatcher } from "../event/EventDispatcher";
 import { IMediator } from "../mediator/interface/IMediator";
 import { IUIController } from "./interface/IUIController";
 
@@ -11,7 +13,7 @@ export class UIController implements IUIController
     private resultMessage: HTMLElement;
     private betAmount: number = 1;
   
-    constructor()
+    constructor(dispatcher: EventDispatcher)
     {
         this.spinButton = document.getElementById("spin-button") as HTMLButtonElement;
         this.addFundsButton = document.getElementById("add-funds-button") as HTMLButtonElement;
@@ -22,6 +24,8 @@ export class UIController implements IUIController
         this.setupSpinButton();
         this.setupBetButtons();
         this.setupFundsButton();
+
+        dispatcher.addEventListener(PlayerBalanceEvent.BALANCE, (e) => this.setBalanceValue(e as PlayerBalanceEvent));
     }
 
     public bindMediator(mediator: IMediator): void
@@ -47,9 +51,9 @@ export class UIController implements IUIController
         });
     }
 
-    public setBalanceValue(value: number): void
+    public setBalanceValue(e: PlayerBalanceEvent): void
     {
-        this.balanceElement.textContent = `Balance: $${value}`;
+        this.balanceElement.textContent = `Balance: $${e.balance}`;
     }
 
     private setupSpinButton(): void

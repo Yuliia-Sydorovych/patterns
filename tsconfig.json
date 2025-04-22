@@ -4,8 +4,8 @@
       "module": "ES6",
       "strict": true,
       "esModuleInterop": true,
-      "outDir": "./dist",    // Ensure this points to the correct directory
-      "rootDir": "./src",    // Your TypeScript files should be inside the `src` directory
+      "outDir": "./dist",
+      "rootDir": "./src",
       "skipLibCheck": true
   },
   "include": ["src/**/*.ts"],

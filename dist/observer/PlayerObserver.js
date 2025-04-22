@@ -1,8 +1,9 @@
+import { PlayerBalanceEvent } from "./event/PlayerBalanceEvent.js";
 export class PlayerObserver {
-    constructor(uiController) {
-        this.uiController = uiController;
+    constructor(dispatcher) {
+        this.dispatcher = dispatcher;
     }
     update(value) {
-        this.uiController.setBalanceValue(value);
+        this.dispatcher.dispatch(new PlayerBalanceEvent(value));
     }
 }

@@ -1,4 +1,4 @@
-export interface IObserver
+export interface IObserver<T>
 {
-    update(data: number): void;
+    update(data: T): void;
 }

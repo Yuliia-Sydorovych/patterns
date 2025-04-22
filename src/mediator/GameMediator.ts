@@ -1,3 +1,4 @@
+import { CommandManager } from "../command/CommandManager";
 import { ICommand } from "../command/interface/ICommand";
 import { IPlayer } from "../observer/interface/IPlayer";
 import { IUIController } from "../ui/interface/IUIController";
@@ -5,8 +6,9 @@ import { IMediator } from "./interface/IMediator";
 
 export class GameMediator implements IMediator
 {
-    private player: IPlayer;
+    private player: IPlayer<number>;
     private uiController: IUIController;
+    private commandManager: CommandManager;
     private spinCommand: ICommand;
     private betCommand: ICommand;
     private actions: { [key: string]: (value: number) => void } = {};
@@ -14,8 +16,9 @@ export class GameMediator implements IMediator
     constructor(
         spinCommand: ICommand,
         betCommand: ICommand,
-        player: IPlayer,
-        uiController: IUIController
+        player: IPlayer<number>,
+        uiController: IUIController,
+        commandManager: CommandManager
     ) {
         this.player = player;
 
@@ -24,6 +27,7 @@ export class GameMediator implements IMediator
 
         this.spinCommand = spinCommand;
         this.betCommand = betCommand;
+        this.commandManager = commandManager;
 
         this.initializeActions();        
     }
@@ -42,13 +46,17 @@ export class GameMediator implements IMediator
 
         this.registerAction("spin", (value) =>
         {
-           this.spinCommand.execute(value);
+            this.commandManager.executeCommand(this.spinCommand, value);
         });
 
         this.registerAction("bet", (value) =>
         {
-            this.betCommand.execute(value);
+            this.commandManager.executeCommand(this.betCommand, value);
         });
+
+        this.registerAction("undo", () => this.commandManager.undo());
+        
+        this.registerAction("redo", () => this.commandManager.redo());
     }
 
     private registerAction(event: string, action: (value: number) => void): void

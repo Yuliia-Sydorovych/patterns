@@ -1,17 +1,18 @@
-import { IUIController } from "../ui/interface/IUIController";
+import { PlayerBalanceEvent } from "./event/PlayerBalanceEvent";
+import { EventDispatcher } from "../event/EventDispatcher";
 import { IObserver } from "./interface/IObserver";
 
-export class PlayerObserver implements IObserver
+export class PlayerObserver implements IObserver<number>
 {
-    private uiController: IUIController;
+    private dispatcher: EventDispatcher;
 
-    constructor(uiController: IUIController)
+    constructor(dispatcher: EventDispatcher)
     {
-        this.uiController = uiController;
+        this.dispatcher = dispatcher;
     }
 
     public update(value: number): void
     {
-        this.uiController.setBalanceValue(value);
+        this.dispatcher.dispatch(new PlayerBalanceEvent(value));
     }
 }

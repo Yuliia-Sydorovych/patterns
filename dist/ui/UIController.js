@@ -1,5 +1,6 @@
+import { PlayerBalanceEvent } from "../observer/event/PlayerBalanceEvent.js";
 export class UIController {
-    constructor() {
+    constructor(dispatcher) {
         this.betAmount = 1;
         this.spinButton = document.getElementById("spin-button");
         this.addFundsButton = document.getElementById("add-funds-button");
@@ -9,6 +10,7 @@ export class UIController {
         this.setupSpinButton();
         this.setupBetButtons();
         this.setupFundsButton();
+        dispatcher.addEventListener(PlayerBalanceEvent.BALANCE, (e) => this.setBalanceValue(e));
     }
     bindMediator(mediator) {
         this.mediator = mediator;
@@ -24,8 +26,8 @@ export class UIController {
             button.disabled = !enabled;
         });
     }
-    setBalanceValue(value) {
-        this.balanceElement.textContent = `Balance: $${value}`;
+    setBalanceValue(e) {
+        this.balanceElement.textContent = `Balance: $${e.balance}`;
     }
     setupSpinButton() {
         this.spinButton.addEventListener("click", () => {

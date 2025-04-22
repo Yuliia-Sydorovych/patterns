@@ -6,5 +6,4 @@ export interface IUIController
     updateGameResult(value: string): void;
     setSpinButtonState(value: boolean): void;
     setBetButtonsState(value: boolean): void;
-    setBalanceValue(value: number): void;
 }
