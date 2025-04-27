@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745764516047" clover="3.2.0">
-  <project timestamp="1745764516047" name="All files">
-    <metrics statements="118" coveredstatements="114" conditionals="20" coveredconditionals="20" methods="59" coveredmethods="53" elements="197" coveredelements="187" complexity="0" loc="118" ncloc="118" packages="7" files="12" classes="12"/>
+<coverage generated="1745765840162" clover="3.2.0">
+  <project timestamp="1745765840162" name="All files">
+    <metrics statements="118" coveredstatements="116" conditionals="20" coveredconditionals="20" methods="59" coveredmethods="56" elements="197" coveredelements="192" complexity="0" loc="118" ncloc="118" packages="7" files="12" classes="12"/>
     <package name="command">
       <metrics statements="17" coveredstatements="17" conditionals="6" coveredconditionals="6" methods="5" coveredmethods="5"/>
       <file name="BaseCommand.ts" path="C:\Users\yuliia.sydorovych\OneDrive - Sigma Software LLC\Desktop\Yuliia\Education\Projects\patterns\patterns\src\command\BaseCommand.ts">
@@ -130,23 +130,23 @@
       </file>
     </package>
     <package name="observer">
-      <metrics statements="14" coveredstatements="12" conditionals="1" coveredconditionals="1" methods="9" coveredmethods="6"/>
+      <metrics statements="14" coveredstatements="14" conditionals="1" coveredconditionals="1" methods="9" coveredmethods="9"/>
       <file name="Player.ts" path="C:\Users\yuliia.sydorovych\OneDrive - Sigma Software LLC\Desktop\Yuliia\Education\Projects\patterns\patterns\src\observer\Player.ts">
-        <metrics statements="14" coveredstatements="12" conditionals="1" coveredconditionals="1" methods="9" coveredmethods="6"/>
+        <metrics statements="14" coveredstatements="14" conditionals="1" coveredconditionals="1" methods="9" coveredmethods="9"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="22" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="22" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="38" count="2" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="48" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="38" count="6" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="48" count="7" type="stmt"/>
       </file>
     </package>
     <package name="reels">
