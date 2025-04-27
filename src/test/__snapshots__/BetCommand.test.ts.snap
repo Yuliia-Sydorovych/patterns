@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BetCommand should fail to place bet if funds are insufficient 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      "Insufficient funds to place the bet.",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`BetCommand should place a bet successfully if funds are sufficient 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      "Bet of $100 placed successfully.",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`BetCommand should redo the last bet 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      "Insufficient funds to place the bet.",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`BetCommand should undo the last bet 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      "Undo bet of $100",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

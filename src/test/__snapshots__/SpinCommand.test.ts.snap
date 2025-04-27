@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SpinCommand should show insufficient funds if bet cannot be placed 1`] = `
+[MockFunction] {
+  "calls": [
+    [],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SpinCommand should spin and update balance when bet is placed successfully 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      250,
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
